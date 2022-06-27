@@ -1,0 +1,17 @@
+.container
+  .row.justify-content-md-center
+    %h1 Edit Teacher
+  %br
+  .row
+    .col-lg-6
+      %p This will be a form. Needs schools, years...
+    .col-lg-offset-10
+      %a.btn.btn-primary{href: "/teachers/", style: "float:right"} Teachers Index
+  %br
+  .row
+    .col-lg-6
+  = form_for @teacher do |f|
+    = f.label :name
+    = f.text_field :name
+    = f.submit
+  %br

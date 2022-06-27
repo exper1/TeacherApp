@@ -1,0 +1,30 @@
+.container
+  .row.justify-content-md-center
+    %h1 Teachers Index
+  .row
+    .col-lg-6
+      %p This will be a paginated/sortable table... I hope.
+    .col-lg-offset-10
+      %a.btn.btn-primary{href: "/teachers/new"} Create New Teacher
+
+  .row
+    .table-responsive
+      %table.table.table-striped
+        %thead
+          %tr
+            %th{width: '15%'} ID
+            %th{width: '50%'} Name
+            %th{width: '15%'} Created
+            %th{width: '10%'} Actions
+
+        %tbody
+          - @teachers.each do |teacher|
+            %tr
+              %td= teacher.id
+              %td= teacher.name
+              %td= teacher.created_at.strftime("%B %d, %Y")
+              %td
+                =button_to edit_teacher_path(teacher.id), method: :get, style: "float: left; margin-right:0.5em;", class: "btn btn-sm btn-info" do
+                  %i.glyphicon.glyphicon-pencil
+                =button_to teacher_path(teacher.id), method: :delete, class: "btn btn-sm btn-danger" do
+                  %i.glyphicon.glyphicon-remove
