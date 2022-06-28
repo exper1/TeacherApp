@@ -12,9 +12,10 @@
       %table.table.table-striped
         %thead
           %tr
-            %th{width: '15%'} ID
-            %th{width: '50%'} Name
-            %th{width: '15%'} Created
+            %th{width: '10%'} ID
+            %th{width: '30%'} Name
+            %th{width: '30%'} School
+            %th{width: '10%'} Year
             %th{width: '10%'} Actions
 
         %tbody
@@ -22,7 +23,8 @@
             %tr
               %td= teacher.id
               %td= teacher.name
-              %td= teacher.created_at.strftime("%B %d, %Y")
+              %td= teacher.school
+              %td= teacher.year
               %td
                 =button_to edit_teacher_path(teacher.id), method: :get, style: "float: left; margin-right:0.5em;", class: "btn btn-sm btn-info" do
                   %i.glyphicon.glyphicon-pencil

@@ -1,24 +1,35 @@
-# README
+# TeacherApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a demo app using Rails 6, HAML, PostgreQL, jQuery, Bootstrap, Faker and RSpec
 
-Things you may want to cover:
+## Start PostgreSQL
+```bash
+$ brew services start postgresql
+```
+## Create db with content seeded by Faker:
+```bash
+$ rails db:create
+```
+```bash
+$ rails db:migrate
+```
+```bash
+$ rails dB:seed
+```
+## To start App:
+```bash
+$ rails s
+```
+- visit http://localhost:3000/''
 
-* Ruby version
+## To stop App:
+- ctrl-c in terminal
 
-* System dependencies
+## To stop PostgreSQL:
+```bash
+$ brew services stop postgresql
+```
 
-* Configuration
+## How to run the test suite
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
